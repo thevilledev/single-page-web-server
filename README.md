@@ -13,8 +13,9 @@ On a side note, it's not finished yet. See TODO chapter.
 
 ## Requirements
 
-* Linux
-* GCC
+* Linux (tested with kernel 3.10.0)
+* GCC (tested with version 4.2.8)
+* GNU make (tested with version 3.82)
 
 ## Potential use cases
 
@@ -75,6 +76,7 @@ $ bin/single-page-web-server -p 8080 -f index.html
 * It's probably not compliant with the HTTP/1.0 specification, even though it only accepts GET requests. I should read the RFC once again.
 * Bug hunt. I'm pretty sure the protocol handling isn't perfect.
 * Timeouts should be used. If a client opens up a TCP connection but doesn't send any requests, we shouldn't waste our threads on that.
+* Add possibility to specify a listen address.
 
 ## Development ideas
 
