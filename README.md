@@ -31,10 +31,11 @@ Source code is located in the `src` directory. Run `make` to build.
 
 ```
 $ make
-gcc -lpthread -c -o obj/util.o src/util.c
-gcc -lpthread -c -o obj/server.o src/server.c
-gcc -lpthread -c -o obj/http.o src/http.c
-gcc -lpthread -o bin/single-page-web-server obj/util.o obj/server.o obj/http.o
+gcc -lpthread -Os -s -c -o obj/util.o src/util.c
+gcc -lpthread -Os -s -c -o obj/server.o src/server.c
+gcc -lpthread -Os -s -c -o obj/sockets.o src/sockets.c
+gcc -lpthread -Os -s -c -o obj/http.o src/http.c
+gcc -lpthread -Os -s -o bin/single-page-web-server obj/util.o obj/server.o obj/sockets.o obj/http.o
 ```
 
 This creates two directories: `obj` for objects and `bin` for the resulting binary file.
